@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Sarabun', sans-serif;
+}
+body {
+    background-image: url('https://img.freepik.com/free-vector/purple-abstract-background_1393-310.jpg?w=1060&t=st=1678551834~exp=1678552434~hmac=ee8a85a6bacd20e309a93eaab684915db55ee6e807c4ce35eefb9e1cf64c1072');
+}
+.card {
+    margin: 100px 0 30px;
+    box-shadow: 0 0 5px grey;
+}
+.card h1 {
+    text-align: center;
+    margin: 20px 0 10px;
+}
+.firstname {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+.lastname {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+.idnumber {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+.age {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+.phonenumber {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+.sex {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+.address {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+.email {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+.blood {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+.birthday {
+    text-align: center;
+    padding: 0 20px 0;
+    margin: 20px 0 5px;
+}
+
+.form-check {
+    text-align: left;
+    padding: 0 50px 0;
+    margin: 20px 150px 5px;
+}
+.confirm-button {
+    display: flex;
+    justify-content: center;
+}
+.confirm-button button{
+    margin: 20px 5px 20px;
+}
+span input {
+    margin-top: 20px;
+}

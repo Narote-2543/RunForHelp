@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/New_LOGO.png">
+    <title>Run For Help</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div id="onload1">
+        <div id="onload2"></div>
+    </div>
+    <a onclick="gotop()" class="gotop"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+        <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
+      </svg></a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <img src="/img/New_LOGO.png" alt="" width="50" height="35" class="d-inline-block align-text-top">Run For Help 2023
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <button class="btn btn-outline-success me-2" type="button" id="show-login" onclick="gotop()"> สำหรับผู้จัดงาน</button>
+                    <button class="btn btn-outline-warning me-2" type="button" onclick="window.location.href='form.html'" disabled>สมัครเข้าร่วมโครงการ (หมดเขต)</button>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="popup">
+        <div class="close-btn">&times;</div>
+        <div class="form">
+            <h2>Login</h2>
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter email">
+            </div>
+            <div class="form-element">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password">
+            </div>
+            <div class="form-element">
+                <input type="checkbox" id="rememberMe">
+                <label for="remember -me">Remember Me</label>
+            </div>
+            <div class="form-element">
+                <!-- <input type="submit" id="login" name="login" value="Login" onsubmit="loginWithEmail"> -->
+                <button type="submit" id="login" value="login" name="login">Sign in</button>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="imgpromote">
+                        <img src="/img/promote.jpg" alt="promote">
+                    </div>
+                </div>
+            
+                <div class="col-sm-12 col-md-8">
+                    <div class="card">
+                        <div class="topic">
+                            <img src="/img/logo.jpg" alt="logo">
+                            <h1>Run For Help :: หนึ่งคนวิ่งหลายชีวิตรอด</h1>
+                        </div>
+                        <hr>
+                        <span>
+                            <p> Event Date : 28 / 10 / 2566</p>
+                        </span>
+                        <div class="maindata">
+                            <img src="/img/register.jpg" alt="register">
+                            <p>&nbsp;&nbsp; มูลนิธิคุณธรรมการกุศลบัวใหญ่"เต็กก่า"จีหลักเกาะ จัดตั้งเมื่อ พ.ศ.2540 ปัจจุบันมี นางสาวกมลรัตน์ อภิเมธีธำรง เป็นประธานมูลนิธิฯ โดยมีวัตถุประสงค์เพื่อสาธารณประโยชน์ ช่วยเหลือเก็บศพไร้ญาติ เป็นหน่วยงานช่วยเหลืออุบัติเหตุจราจร บริจาคโลงศพ และช่วยเหลือภัยพิบัติต่างๆ ซึ่งในแต่ละปีจะมีการทำบุญทำทานแจกสิ่งของ จัดงานประเพณี ในเขตอำเภอบัวใกญ่และอำเภอใกล้เคียงจังหวัดนครราชสีมา </p>
+                            <p>&nbsp;&nbsp;แต่การดำเนินงานของมูลนิธิฯ ซึ่งมีงบประมาณไม่เพียงพอ จึงจัดทำโครงการเดิน-วิ่งเพื่อการกุศล Run For Help หนึ่งคนวิ่งหลายชีวิตรอด ครั้งที่1 เพื่อนำรายได้มาจัดซื้อรถอุปกรณ์กู้ภัย เพราะในปัจจุบันมีอุบัติเหตุทางรถยนต์เกิดขึ้นบ่อยครั้ง จึงมีความจำเป็นที่จะต้องจัดหาและจัดซื้ออุปกรณ์ช่วยชีวิตเพื่อช่วยเหลือชีวิตเเละบริการประชาชนในเขตรับผิดชอบได้อย่างครอบคลุม</p>
+                            <p>
+                                <strong>เปิดรับสมัคร:</strong>
+                                ตั้งแแต่วันที่ 1 พฤษภาคม 2566 ถึงวันที่ 30 กันยายน 2566
+                            </p>
+
+                            <img src="/img/a3rotate.jpg" alt="">
+                            <br>
+                            <img src="/img/registerv2.jpg" alt="">
+                            <br>
+                            <img src="/img/genderv2.jpg" alt="">
+                            <br>
+                            <img src="/img/getv2.jpg" alt="">
+                            <br>
+                            <img src="/img/sizev2.jpg" alt="">
+                            <br>
+                            <img src="/img/6km.jpg" alt="6km">
+                            <br>
+                            <h3 style="text-align: center;">เสื้อสำหรับนักวิ่ง 11 กิโลเมตร</h3>
+                            <br>
+                            <img src="/img/11km.jpg" alt="11km">
+                            <br>
+                            <h3 style="text-align: center;">เสื้อสำหรับนักวิ่ง 6 กิโลเมตร</h3>
+                            <br>
+                            <img src="/img/vip.jpg" alt="Vip1">
+                            <br>
+                            <h3 style="text-align: center;">เสื้อสำหรับนักวิ่ง VIP</h3>
+                            <br>
+                            <img src="/img/เหรียญรางวัล3.jpg" alt="เหรียญรางวัล3">
+                            <br>
+                            <hr>
+                            <h3 style="text-align: center;">แผนที่วิ่ง 6km</h3>
+                            <br>
+                            <img src="/img/map6km.jpg" alt="">
+                            <br>
+                            <h3 style="text-align: center;">แผนที่วิ่ง 11km</h3>
+                            <br>
+                            <img src="img/map11km.jpg" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <div class="subdata">
+                            <img src="/img/New_LOGO.png" alt="logo event">
+                            <h1>Run For Help</h1>
+                        </div>
+                        <div class="dataregister">
+                            <h3>วันที่เปิดรับสมัคร</h3>
+                            <h5>ตั้งแต่วันนี้จนถึง 30 กันยายน 2566</h5>
+                        </div>
+                        <h3 style="color: blueviolet;">เช็คสถานะการสมัคร</h3>
+                        <div class="checkdata">
+                            <input class="form-control" type="text" name="checkdata" placeholder="กรอกรหัสประจำตัวประชาชน" aria-label="default input example" id="idcitizen">
+                            <button type="button" class="btn btn-success" id="submitcheck">ตกลง</button>
+                            <label id="showdata"></label>
+                        </div>
+                        <div class="wrapper">
+                            <header>
+                                <p class="current-date"></p>
+                                <div class="icons">
+                                    <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                                    <span id="next" class="material-symbols-rounded">chevron_right</span>
+                                </div>
+                            </header>
+                            <div class="calendar">
+                                <ul class="weeks">
+                                    <li>Sun</li>
+                                    <li>Mon</li>
+                                    <li>Tue</li>
+                                    <li>Wed</li>
+                                    <li>Thu</li>
+                                    <li>Fri</li>
+                                    <li>Sat</li>
+                                </ul>
+                                <ul class="days"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="accommodation">
+                <span>
+                    <h1>แนะนำที่พัก</h1>
+                    <a href="https://www.agoda.com/th-th/bua-yai/maps/nakhonratchasima-th.html?cid=1844104">ดูเพิ่มเติม</a>
+                </span>
+                
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">โรงเเรมบงกช</h5>
+                              <p class="card-text">ที่อยู่ เลขที่ 19 ถนนโคกสูง5 ตำบลบัวใหญ่ อำเภอบัวใหญ่ 30120
+                                เบอร์โทรศัพท์ : 082-1134000</p>
+                              <a href="https://www.facebook.com/profile.php?id=100083325191379" class="btn btn-primary">ดูรายละเอียด</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://1.bp.blogspot.com/-gE5BQPi2bQE/YCzOFwTwb-I/AAAAAAAATIs/0kqF1Z7ZG9UdGXzhun-1si_F85WLANuGwCLcBGAsYHQ/s16000/zsawef78524.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">ข้าวหอมรีสอร์ท</h5>
+                              <p class="card-text">ที่อยู่: 149 ถนน เทศบาล 7 ต.บัวใหญ่ อำเภอบัวใหญ่, จังหวัดนครราชสีมา
+                                เบอร์โทรศัพท์ : 098-3091889</p>
+                              <a href="https://www.facebook.com/khowhomresort/" class="btn btn-primary">ดูรายละเอียด</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://lh3.googleusercontent.com/p/AF1QipMenTLSYuyWPygw0S7mh04_ogbGVZ0PEpgNvq-I=s1360-w1360-h1020" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">พาราไดซ์รีสอร์ท</h5>
+                              <p class="card-text">ที่อยู่ 88 ถนนเทศบาล5 ต.บัวใหญ่ อ.บัวใหญ่ จ.นครราชสีมา 30120  เบอร์โทรศัพท์ : 099-1697554</p>
+                              <a href="https://web.facebook.com/pages/%E0%B8%9E%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B9%84%E0%B8%94%E0%B8%8B%E0%B9%8C%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%97%20%E0%B8%AD.%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%20%E0%B8%88.%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2/112592655961541/" class="btn btn-primary">ดูรายละเอียด</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container"> 
+            <div class="reference">
+                <p>ติดต่อเรา : <a href="https://www.facebook.com/profile.php?id=100090588342787&mibextid=LQQJ4d"> โครงการเดิน-วิ่งเพื่อการกุศล Run for Help หนึ่งคนวิ่งหลายชีวิตรอด ครั้งที่1</a> </p>
+                <p>เบอร์โทร : <a href="tel:044000266"> 044-000-266</a> หรือ <a href="tel:0616976677"> 061-697-6677</a>&nbsp;คุณพงศธร</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index_module.js" type="module"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

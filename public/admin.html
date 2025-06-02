@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/New_LOGO.png">
+    <title>AdminDashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+<body id="page-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="New_LOGO.png" alt="" width="50" height="35" class="d-inline-block align-text-top">Run For Help 2023
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <button class="btn btn-outline-success me-2" type="button" onclick="window.location.href='index.html'">กลับหน้าหลัก</button>
+            </ul>
+          </div>
+        </div>
+    </nav> -->
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+          <!-- Sidebar - Brand -->
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+              <div class="sidebar-brand-icon rotate-n-15">
+                  <i class="fas fa-laugh-wink"></i>
+              </div>
+              <div class="sidebar-brand-text mx-3">Admin</div>
+          </a>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <!-- Nav Item - Dashboard -->
+          <li class="nav-item active">
+              <a class="nav-link" href="#">
+                  <i class="fas fa-fw fa-tachometer-alt"></i>
+                  <span>Dashboard</span></a>
+          </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+          <li class="nav-item active">
+              <a class="nav-link" href="adddata.html">
+                  <i class="bi bi-person-plus-fill"></i>
+                  <span>เพิ่มข้อมูล</span></a>
+          </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+          <li class="nav-item active">
+              <a class="nav-link" href="updatedata.html">
+                  <i class="bi bi-database-fill-up"></i>
+                  <span>แก้ไขข้อมูล</span></a>
+          </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+          <li class="nav-item active">
+              <a class="nav-link" href="deletedata.html">
+                  <i class="bi bi-person-x-fill"></i>
+                  <span>ลบข้อมูล</span></a>
+          </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+
+          
+
+
+          <!-- Sidebar Toggler (Sidebar) -->
+          <div class="text-center d-none d-md-inline">
+              <button class="rounded-circle border-0" id="sidebarToggle"></button>
+          </div>
+
+
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+
+          <!-- Main Content -->
+          <div id="content">
+
+              <!-- Topbar -->
+              <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                  <!-- Sidebar Toggle (Topbar) -->
+                  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                      <i class="fa fa-bars"></i>
+                  </button>
+
+                  <div class="container-fluid">
+                    <h3>จัดการข้อมูลหลังบ้าน</h3>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto">
+                        <button type="button" class="btn btn-outline-danger" onclick="window.location.href='index.html'">Logout</button>
+                    </div>
+                  </div>
+                </div>
+                  
+                  
+
+              </nav>
+              <!-- End of Topbar -->
+
+              <!-- Begin Page Content -->
+              <div class="container-fluid">
+
+                  <!-- Page Heading -->
+                  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                      <h1 class="h1 mb-0 text-gray-800">จำนวนผู้สมัครทั้งหมด: <label id="TotalRegister"></label></h1>
+                      <div>
+                        <button type="button" class="btn btn-primary" id="downloadcsv">ดาวน์โหลดข้อมูลทั้งหมด</button>
+                      </div>
+                  </div>
+        
+                  <hr class="sidebar-divider">
+                  <!-- Content Row -->
+                  <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase fs-5 mb-1">รายได้ทั้งหมด</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Totalincome"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-currency-bitcoin fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase fs-5 mb-1">VIP</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Totalvip"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-cash fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase fs-5 mb-1">11km</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Totalelevenkm"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-cash fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase fs-5 mb-1">6km</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Totalsixkm"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-cash fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase fs-5 mb-1">ส่งทั้งหมด&nbsp;<label id="Totalexpress"></label></div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Totaldelivery"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-cash fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="h3 mb-0 text-gray-800">จำแนกเพศของผู้สมัครทั้งหมด</h3>
+                  <br>
+                  <br>
+                  <div class="col-xl-3 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                          <div class="card-body">
+                              <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                      <div class="text-xs font-weight-bold text-primary text-uppercase fs-5 mb-1">เพศชาย</div>
+                                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="amountMale"></div>
+                                  </div>
+                                  <div class="col-auto">
+                                      <i class="fa fa-mars fa-2x text-gray-300"></i>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-danger shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-danger text-uppercase fs-5 mb-1">เพศหญิง</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="amountFemale"></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fa fa-venus fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  </div>
+                  <h3 class="h3 mb-0 text-gray-800">ช่วงอายุของผู้สมัครทั้งหมด</h3>
+                  <h5>เพศชาย</h5>
+                  <div class="row">
+                      <!-- Earnings (Monthly) Card Example -->
+                      <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-left-primary shadow h-100 py-2">
+                              <div class="card-body">
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-primary text-uppercase fs-5 mb-1">
+                                              อายุไม่เกิน 19 ปี</div>
+                                          <div class="h5 mb-0 font-weight-bold text-gray-800" id="amountBefore"></div>
+                                      </div>
+                                      <div class="col-auto">
+                                          <i class="fa fa-child fa-2x text-gray-300"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div> 
+
+                      <!-- Earnings (Monthly) Card Example -->
+                      <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-left-primary shadow h-100 py-2">
+                              <div class="card-body">
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-primary text-uppercase fs-5 mb-1">
+                                            อายุ 20-29 ปี</div>
+                                          <div class="h5 mb-0 font-weight-bold text-gray-800" id="amountFirstAge"></div>
+                                      </div>
+                                      <div class="col-auto">
+                                          <i class="fa fa-female fa-2x text-gray-300"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-left-primary shadow h-100 py-2">
+                              <div class="card-body">
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-primary text-uppercase fs-5 mb-1">
+                                            อายุ 30-39 ปี</div>
+                                          <div class="h5 mb-0 font-weight-bold text-gray-800" id="amountSecondAge"></div>
+                                      </div>
+                                      <div class="col-auto">
+                                          <i class="fa fa-male fa-2x text-gray-300"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-left-primary shadow h-100 py-2">
+                              <div class="card-body">
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-primary text-uppercase fs-5 mb-1">
+                                            อายุ 40-49 ปี</div>
+                                          <div class="h5 mb-0 font-weight-bold text-gray-800" id="amountThirdAge"></div>
+                                      </div>
+                                      <div class="col-auto">
+                                          <i class="fa fa-exclamation-circle fa-2x text-gray-300"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-left-primary shadow h-100 py-2">
+                              <div class="card-body">
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-primary text-uppercase fs-5 mb-1">
+                                            อายุ 50-59 ปี</div>
+                                          <div class="h5 mb-0 font-weight-bold text-gray-800" id="amountFourthAge"></div>
+                                      </div>
+                                      <div class="col-auto">
+                                          <i class="fa fa-exclamation-circle fa-2x text-gray-300"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-left-primary shadow h-100 py-2">
+                              <div class="card-body">
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-primary text-uppercase fs-5 mb-1">
+                                            อายุ 60 ปีขึ้นไป</div>
+                                          <div class="h5 mb-0 font-weight-bold text-gray-800" id="amountFifthAge"></div>
+                                      </div>
+                                      <div class="col-auto">
+                                          <i class="fa fa-exclamation-circle fa-2x text-gray-300"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    <br>
+                    <h5>เพศหญิง</h5>
+                    <br><div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-danger shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-danger text-uppercase fs-5 mb-1">
+                                            อายุไม่เกิน 19 ปี</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Female_amountBefore"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-child fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-danger shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-danger text-uppercase fs-5 mb-1">
+                                          อายุ 20-29 ปี</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Female_amountFirstAge"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-female fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-danger shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-danger text-uppercase fs-5 mb-1">
+                                          อายุ 30-39 ปี</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Female_amountSecondAge"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-male fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-danger shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-danger text-uppercase fs-5 mb-1">
+                                          อายุ 40-49 ปี</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Female_amountThirdAge"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-exclamation-circle fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-danger shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-danger text-uppercase fs-5 mb-1">
+                                          อายุ 50 ปีขึ้นไป</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="Female_amountFourthAge"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-exclamation-circle fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <hr>
+
+                    <script>
+
+                    for (i=0,i<=0;i++;){
+                        if(i=100){
+                            console.log("ขอโทษนะที่รัก");
+                        }
+                    };
+                    </script>
+                      
+                    
+
+                      <!-- Earnings (Monthly) Card Example -->
+                      <!-- <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-left-info shadow h-100 py-2">
+                              <div class="card-body">
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                          </div>
+                                          <div class="row no-gutters align-items-center">
+                                              <div class="col-auto">
+                                                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                              </div>
+                                              <div class="col">
+                                                  <div class="progress progress-sm mr-2">
+                                                      <div class="progress-bar bg-info" role="progressbar"
+                                                          style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                          aria-valuemax="100"></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-auto">
+                                          <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div> -->
+
+                      <!-- Pending Requests Card Example -->
+                    <!-- <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-left-warning shadow h-100 py-2">
+                              <div class="card-body">
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                              Pending Requests</div>
+                                          <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                      </div>
+                                      <div class="col-auto">
+                                          <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div> -->
+
+                  <!-- Content Row -->
+
+
+          <!-- Footer -->
+          <footer class="sticky-footer bg-white">
+              <div class="container my-auto">
+                  <div class="copyright text-center my-auto">
+                      <span>Copyright &copy; Your Website 2021</span>
+                  </div>
+              </div>
+          </footer>
+          <!-- End of Footer -->
+
+      </div>
+      <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+
+
+    <script src="js/admin.js" type="module"></script>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+</body>
+</html>
